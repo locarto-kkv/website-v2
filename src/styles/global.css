@@ -1,0 +1,35 @@
+/* src/styles/global.css */
+
+/* ─ RESET ─ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ─ FLUID VARIABLES ─ */
+:root {
+  /* NavBar fluid values */
+  --nav-padding-block:    clamp(16px, 2vw, 40px);
+  --nav-padding-inline:   clamp(16px, 2vw, 40px);
+  --nav-gap:              clamp(24px, 2.5vw, 64px);
+  --hero-margin-inline:   clamp(30px, 8vw, 200px);
+  --link-font-size:       clamp(17px, 1.1vw, 30px);
+
+  /* HeroSection fluid values */
+  --hero-padding-inline:      clamp(10px, 4vw, 100px);
+  --hero-h1-font-size:        clamp(40px, 5vw, 200px);
+  --hero-h1-margin-inline:    clamp(30px, 8vw, 200px);
+  --hero-p-font-size:         clamp(16px, 2vw, 40px);
+  --hero-p-margin-inline:     clamp(20px, 8vw, 200px);
+
+  /* Logo fluid sizing */
+  --logo-height-min:   20px;   /* smallest you’ll allow */
+  --logo-height-ideal: 6vw;    /* fluid rate */
+  --logo-height-max:   65px;   /* maximum height */
+
+  --carousel-padding-block:  3rem;
+  --carousel-padding-inline: 1rem;
+  --carousel-gap:            1.5rem;
+  --slide-count:             5;
+}

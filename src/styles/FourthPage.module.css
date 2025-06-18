@@ -1,0 +1,58 @@
+/* ─────────────────────────────────────────────
+   Uniform blog cards
+   ───────────────────────────────────────────── */
+
+.fourth {
+  padding-block: 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+
+.heading {
+  font-family: "Inter", sans-serif;
+  color: rgba(235, 81, 11, 0.87);
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 52px);
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+/* three equal columns */
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: min(90vw, 1300px);
+}
+
+/* single card style */
+.card {
+  position: relative;
+  aspect-ratio: 4 / 5;         /* identical size for all cards */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e3e3e3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
+}
+.card:hover { transform: translateY(-4px) scale(1.02); }
+
+/* image fills card */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* caption */
+.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.65));
+  color: #fff;
+  font-size: clamp(14px, 1.1vw, 18px);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+}

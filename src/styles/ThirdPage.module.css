@@ -1,0 +1,37 @@
+/* ────────────────────────────────────────────────
+   Third page / video section styles
+   ──────────────────────────────────────────────── */
+
+.third {
+  padding-block: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff; /* change if you need another colour */
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 48px);
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+/* video wrapper keeps a 16:9 box at 66 vw (≈ 2/3 page width) */
+.playerWrapper {
+  position: relative;
+  width: 66vw;           /* ≈ two-thirds of viewport width */
+  aspect-ratio: 16 / 9;  /* maintain 16:9 */
+  max-width: 1200px;     /* optional upper bound */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* let ReactPlayer absolutely fill the wrapper */
+.player {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}

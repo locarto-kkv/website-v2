@@ -1,0 +1,41 @@
+/* src/styles/HeroSection.module.css */
+
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(235, 81, 11, 0.87);
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  max-width: 4000px;
+  margin: 0 auto;
+  padding-block: 0 1rem;
+  padding-inline: var(--hero-padding-inline);
+}
+
+.content h1 {
+  font-family: 'Degular Display', sans-serif;
+  font-size: var(--hero-h1-font-size);
+  /* same margin for both headings and paragraphs */
+  margin-inline: var(--hero-margin-inline);
+  margin-bottom: 8px;
+}
+
+.content p {
+  font-family: 'Degular Display', sans-serif;
+  font-size: var(--hero-p-font-size);
+  /* switch to the same variable */
+  margin-inline: var(--hero-margin-inline);
+  margin-top: 0;
+}

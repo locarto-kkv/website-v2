@@ -1,0 +1,108 @@
+/* ──────────────────────────────────────────────────────────────
+   src/styles/Secondpage.module.css
+   Complete file – includes:
+   • fluid paddings via custom-props
+   • Embla carousel layout
+   • circular arrow buttons (no more ovals)
+   • subtle polish (smooth scroll, shadows, focus states)
+   ────────────────────────────────────────────────────────────── */
+
+/* =========================================================================
+   1.  Section wrapper
+   ========================================================================= */
+.second {
+  position: relative;
+  padding-block: var(--carousel-padding-block);
+  padding-inline: var(--hero-padding-inline, var(--carousel-padding-inline));
+  background: #fafafa;
+}
+
+/* =========================================================================
+   2.  Embla outer viewport
+   ========================================================================= */
+.embla {
+  overflow: hidden;
+  padding-inline: var(--carousel-padding-inline); /* inset slides left + right */
+  box-sizing: content-box;                         /* keep slide width intact */
+  scroll-behavior: smooth;                         /* nicer swipe-scroll feel */
+}
+
+/* =========================================================================
+   3.  Slide container (flex row)
+   ========================================================================= */
+.embla__container {
+  display: flex;
+  gap: var(--carousel-gap);
+  scrollbar-width: none;               /* Firefox */
+}
+.embla__container::-webkit-scrollbar { /* WebKit */
+  display: none;
+}
+
+/* =========================================================================
+   4.  Individual slide
+   ========================================================================= */
+.embla__slide {
+  flex: 0 0 calc(
+    (100% - (var(--slide-count) - 1) * var(--carousel-gap))
+    / var(--slide-count)
+  );
+  max-width: calc(
+    (100% - (var(--slide-count) - 1) * var(--carousel-gap))
+    / var(--slide-count)
+  );
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Manual end-spacing so last slide doesn’t hug the viewport edge */
+.embla__slide:last-child {
+  margin-inline-end: var(--carousel-gap);
+}
+
+/* =========================================================================
+   5.  Arrow navigation buttons
+   ========================================================================= */
+.navButton {
+  /* positioning */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  /* make it a perfect circle */
+  --nav-btn-size: 3rem;        /* change once = size everywhere */
+  width: var(--nav-btn-size);
+  aspect-ratio: 1 / 1;         /* keeps it square even if width changes */
+  border-radius: 50%;
+
+  /* visual */
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  /* centre glyph */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #000;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.70);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navButton:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 3px;
+}
+
+/* position helpers */
+.left  { left: calc(var(--hero-padding-inline, var(--carousel-padding-inline)) + 0.1rem); }
+.right { right: calc(var(--hero-padding-inline, var(--carousel-padding-inline)) + 0.1rem); }

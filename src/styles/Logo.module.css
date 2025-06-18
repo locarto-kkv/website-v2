@@ -1,0 +1,13 @@
+
+/* src/styles/Logo.module.css */
+
+.logoImg {
+  height: clamp(
+    var(--logo-height-min),
+    var(--logo-height-ideal),
+    var(--logo-height-max)
+  );
+  width: auto;           /* keep aspect ratio */
+  border-radius: 30px;   /* your existing rounding */
+}
+

@@ -1,0 +1,73 @@
+/* ─────────────────────────────────────────────
+   Fifth / CTA page
+   ───────────────────────────────────────────── */
+
+.fifth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 4rem 0;
+  background: #fafbff;             /* soft off-white */
+}
+
+/* ── headline ─────────────────────────────── */
+.headline {
+  font-family: "Inter", sans-serif;
+  color:rgba(235, 81, 11, 0.87);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 64px);
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+/* ── form row ─────────────────────────────── */
+.form {
+  display: flex;
+  gap: 0;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 1px solid #cfd2dc;
+}
+
+.input {
+  font-size: 1rem;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  outline: none;
+  min-width: 260px;
+}
+
+.button {
+  background: #0d1535;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  padding: 0 1.6rem;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.button:hover {
+  background: #1e2754;
+}
+
+/* ── socials line 60 px below form ────────── */
+.socials {
+  margin: 60px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6e7790;
+}
+
+/* ── giant logo background ────────────────── */
+.logoArea {
+  width: 100%;
+  height: 50vh;                    /* half the viewport */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;        /* entire logo visible */
+  opacity: 0.95;                   /* optional: slightly subdued */
+}
